@@ -57,6 +57,19 @@ if(isset($_POST['add'])){
     }
 
 }
+
+//delete car
+if(isset($_GET['delete'])){
+    $id = $_GET['delete'];
+
+    $sql = "DELETE FROM cars where id='$id' ";
+    if(mysqli_query($connect, $sql)){
+        echo "<script>alert('Car Deleted')</script>";
+    }else{
+        echo "<script>alert('An error occured, please try agin')</script>";
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
